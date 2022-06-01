@@ -2,10 +2,7 @@ import { useState } from 'react';
 import { Story } from '@storybook/react';
 
 import Autocomplete from 'components/autocomplete';
-import {
-  AutocompleteProps,
-  AutocompleteValue,
-} from 'components/autocomplete/component';
+import { AutocompleteProps, AutocompleteValue } from 'components/autocomplete';
 
 const defaultOptions = [
   { value: 'Menu item 1' },
@@ -47,7 +44,9 @@ export default {
   },
 };
 
-const AutocompleteStory: Story<AutocompleteProps> = (args: AutocompleteProps) => {
+const AutocompleteStory: Story<AutocompleteProps> = (
+  args: AutocompleteProps,
+) => {
   const [, setValues] = useState<AutocompleteValue[]>([]);
 
   return (
