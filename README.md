@@ -10,3 +10,9 @@ Technologies used:
 - Storybook
 - MUI
 - Emotion
+
+### Running the application
+
+1. Install dependencies with  `npm install`
+2. Run the app with `npm run start`
+3. To run the storybook use command `npm run storybook`
