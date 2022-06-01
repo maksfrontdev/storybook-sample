@@ -1,8 +1,9 @@
-import { useState } from 'react';
 import { Story } from '@storybook/react';
+import { useState } from 'react';
 
 import Autocomplete from 'components/autocomplete';
 import { AutocompleteProps, AutocompleteValue } from 'components/autocomplete';
+import AutocompleteContainer from 'components/autocomplete/autocomplete-container';
 
 const defaultOptions = [
   { value: 'Menu item 1' },
@@ -47,23 +48,24 @@ export default {
 const AutocompleteStory: Story<AutocompleteProps> = (
   args: AutocompleteProps,
 ) => {
-  const [, setValues] = useState<AutocompleteValue[]>([]);
+  const [value, setValue] = useState<AutocompleteValue[]>([]);
 
   return (
-    <div style={{ width: '300px', margin: '3em' }}>
+    <AutocompleteContainer maxWidth="xs">
       <Autocomplete
         label={args.label}
         options={args.options}
         placeholder={args.placeholder}
-        onChange={setValues}
+        onChange={setValue}
+        value={value}
       />
-    </div>
+    </AutocompleteContainer>
   );
 };
 
-export const WithChips = AutocompleteStory.bind({});
+export const MultipleAutocomplete = AutocompleteStory.bind({});
 
-WithChips.args = {
+MultipleAutocomplete.args = {
   label: 'Label',
   placeholder: 'Value',
   options: defaultOptions,

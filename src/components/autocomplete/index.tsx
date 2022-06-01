@@ -16,6 +16,7 @@ export type AutocompleteProps = {
   placeholder: string;
   options: AutocompleteValue[];
   onChange: (value: AutocompleteValue[]) => void;
+  value: AutocompleteValue[];
 };
 
 const Autocomplete = ({
@@ -23,6 +24,7 @@ const Autocomplete = ({
   label,
   onChange,
   placeholder,
+  value,
 }: AutocompleteProps) => {
   return (
     <MuiAutocomplete
@@ -30,6 +32,7 @@ const Autocomplete = ({
       size="small"
       options={options}
       onChange={(_, value) => onChange(value)}
+      value={value}
       getOptionLabel={(option) => option.value}
       renderInput={(params) => (
         <>
