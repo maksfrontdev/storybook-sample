@@ -7,6 +7,10 @@ import {
   Typography,
 } from '@mui/material';
 
+/* Reusable Autocomplete component, responsive
+ * Fills the full width of its parent
+ */
+
 export type AutocompleteValue = {
   value: string;
 };
